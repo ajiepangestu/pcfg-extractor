@@ -1,17 +1,91 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>PCFG-Extractor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/photon.min.css') }}">
 </head>
+
 <body>
-
-
-    
-
-    <script src="main.js"></script>
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <div class="toolbar-actions">
+                <form class="form-horizontal" id="corpus-form" method="post" enctype="multipart/form-data" role="form">
+                    <label class="btn btn-default">
+                        <span class="icon icon-docs icon-text" aria-hidden="true"></span>
+                        Open Korpus
+                        <input id="corpus-file" name="corpus-file" style="display:none" type="file">
+                    </label>
+                </form>
+            </div>
+        </header>
+        <div class="window-content">
+            <div class="pane-group">
+                <div class="pane-sm sidebar">
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            <div class="media-body">
+                                <strong>List item title</strong>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item active">
+                            <div class="media-body">
+                                <strong>List item title</strong>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pane">
+                    <div class="window">
+                        <div class="window-content">
+                            <div class="pane-group">
+                                <div class="pane padded-bottom-more">
+                                    <table class="table-striped" id="pcfg-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:1%">No</th>
+                                                <th>Parent</th>
+                                                <th>Child</th>
+                                                <th>Probability</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>CSS</td>
+                                                <td>28K</td>
+                                                <td>28K</td>
+                                            </tr>
+                                        <tr>
+                                                <td>1</td>
+                                                <td>CSS</td>
+                                                <td>28K</td>
+                                                <td>28K</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="toolbar toolbar-footer">
+            <div class="toolbar-actions">
+                <button class="btn btn-primary pull-right">
+                    Save
+                </button>
+            </div>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
+
 </html>
